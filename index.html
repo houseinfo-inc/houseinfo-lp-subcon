@@ -49,6 +49,10 @@
             backdrop-filter: blur(8px);
             border-bottom: 1px solid rgba(197, 160, 89, 0.2);
         }
+        /* Works Card Hover */
+        .work-card:hover img {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body class="text-slate-800 bg-white">
@@ -153,7 +157,7 @@
                     </div>
                     <h4 class="text-2xl font-serif border-l-4 border-gold pl-4 text-navy">住宅型収益物件の限界</h4>
                     <p class="text-slate-600">
-                        人口減少、建設物価の高騰、そして土地価格の上昇。従来のアパート・マンション経営では、かつてのような利回り確保が困難になっています。「やりたい」と「投資効率」の乖離が広がっています。
+                        人口減少、建設物価の高騰、破壊された需給バランス。従来のアパート・マンション経営では、かつてのような利回り確保が困難になっています。「やりたい」と「投資効率」の乖離が広がっています。
                     </p>
                 </div>
             </div>
@@ -235,6 +239,60 @@
                         <p class="text-slate-500 italic">融資に強い計画策定から、無人運営の仕組み構築まで伴走します。</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 実績セクション (WORKS) -->
+    <section class="py-24 bg-white border-t border-slate-100 overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <p class="text-gold font-bold tracking-widest text-sm mb-2 uppercase">Works / Case Study</p>
+                <h2 class="text-3xl md:text-4xl font-serif text-navy">実績・運営事例</h2>
+                <div class="w-12 h-1 bg-gold mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 事例1 -->
+                <div class="work-card fade-in bg-slate-50 overflow-hidden group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&q=80&w=800" alt="運営事例1" class="w-full h-full object-cover transition-transform duration-500">
+                        <div class="absolute inset-0 bg-navy/20 group-hover:bg-transparent transition-colors duration-300"></div>
+                    </div>
+                    <div class="p-6 border-b border-gold/30">
+                        <p class="text-gold text-xs font-bold mb-2">PROJECT 01</p>
+                        <h3 class="text-xl font-bold font-serif mb-2 text-navy">一棟貸し宿泊施設 プロジェクトA</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">遊休不動産を活用し、高単価な一棟貸しモデルへ転換。ITによる無人運営を実現し、高い利回りを継続しています。</p>
+                    </div>
+                </div>
+                <!-- 事例2 -->
+                <div class="work-card fade-in bg-slate-50 overflow-hidden group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=800" alt="運営事例2" class="w-full h-full object-cover transition-transform duration-500">
+                        <div class="absolute inset-0 bg-navy/20 group-hover:bg-transparent transition-colors duration-300"></div>
+                    </div>
+                    <div class="p-6 border-b border-gold/30">
+                        <p class="text-gold text-xs font-bold mb-2">PROJECT 02</p>
+                        <h3 class="text-xl font-bold font-serif mb-2 text-navy">地域再生型ラグジュアリーヴィラ</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">地域の魅力を再定義した空間設計により、圧倒的な顧客体験を提供。ブランド価値を高め、安定した稼働率を誇ります。</p>
+                    </div>
+                </div>
+                <!-- 事例3 -->
+                <div class="work-card fade-in bg-slate-50 overflow-hidden group md:col-span-2 lg:col-span-1">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800" alt="運営事例3" class="w-full h-full object-cover transition-transform duration-500">
+                        <div class="absolute inset-0 bg-navy/20 group-hover:bg-transparent transition-colors duration-300"></div>
+                    </div>
+                    <div class="p-6 border-b border-gold/30">
+                        <p class="text-gold text-xs font-bold mb-2">PROJECT 03</p>
+                        <h3 class="text-xl font-bold font-serif mb-2 text-navy">宿泊事業オーナー参画モデル B棟</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">建設のプロの知見を最大限に活かしたハード構築。耐久性と運営効率を極限まで高めた次世代の投資モデルです。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center fade-in">
+                <p class="text-slate-500 text-sm mb-6">※機密保持のため一部情報を伏せております。詳細なデータは個別相談にて開示可能です。</p>
             </div>
         </div>
     </section>
