@@ -250,7 +250,7 @@
         </div>
     </section>
 
-    <!-- 実績セクション (WORKS) - ネーミングを経営層向けに変更 -->
+    <!-- 実績セクション (WORKS) -->
     <section id="achievements" class="py-24 bg-white border-t border-slate-100 overflow-hidden">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="text-center mb-16 fade-in">
@@ -325,7 +325,7 @@
                         <span class="text-gold font-serif">Q1.</span>
                         <span class="font-gothic text-base">宿泊事業は未経験ですが、本当にオーナーとして成立しますか？</span>
                     </h5>
-                    <p class="pl-10 text-slate-600 text-sm md:text-base leading-relaxed">
+                    <p class="pl-10 text-slate-600 text-sm md:text-base leading-relaxed text-left">
                         はい、成立します。ただし、自己流で始めるのはおすすめしていません。ハウスインフォは、自社で宿泊事業を実践しながら、未経験オーナーでも成立する形に整理したモデルをご提供します。
                     </p>
                 </div>
@@ -334,7 +334,7 @@
                         <span class="text-gold font-serif">Q2.</span>
                         <span class="font-gothic text-base">本業が忙しくても運営できますか？</span>
                     </h5>
-                    <p class="pl-10 text-slate-600 text-sm md:text-base leading-relaxed">
+                    <p class="pl-10 text-slate-600 text-sm md:text-base leading-relaxed text-left">
                         可能です。むしろ、本業が忙しい方を前提に設計しています。ITを活用した無人運営・人を増やさないオペレーションにより、オーナーは事業判断に集中できる体制を整えます。
                     </p>
                 </div>
@@ -343,7 +343,7 @@
                         <span class="text-gold font-serif">Q3.</span>
                         <span class="font-gothic text-base">宿泊事業はリスクが高いイメージがあります。</span>
                     </h5>
-                    <p class="pl-10 text-slate-600 text-sm md:text-base leading-relaxed">
+                    <p class="pl-10 text-slate-600 text-sm md:text-base leading-relaxed text-left">
                         確かに、準備不足のまま始めるとリスクは高くなります。だからこそ、最初の「思考の整理」と「立地選定」に時間をかけます。私たちは「やらない方がいい」と判断すれば、その通り正直にお伝えします。
                     </p>
                 </div>
@@ -364,7 +364,7 @@
             </p>
             
             <div class="fade-in space-y-6">
-                <a href="https://forms.gle/4YtVc1ZwovsFWRHX7" target="_blank" rel="noopener noreferrer" class="bg-navy hover:bg-slate-800 text-white px-12 py-6 rounded-sm text-xl font-bold transition-all duration-300 inline-block w-full max-md shadow-2xl font-gothic">
+                <a href="https://forms.gle/4YtVc1ZwovsFWRHX7" target="_blank" rel="noopener noreferrer" class="bg-navy hover:bg-slate-800 text-white px-12 py-6 rounded-sm text-xl font-bold transition-all duration-300 inline-block w-full max-w-md shadow-2xl font-gothic text-center">
                     無料個別相談に申し込む
                 </a>
                 <div class="text-slate-400 text-sm">
@@ -407,9 +407,9 @@
             }
         });
 
-        // microCMS取得用のJavaScript
-        const serviceDomain = "himejiyadolp"; 
-        const apiKey = "JVD618WY7mbQGNV9dZFKZc5TUXJdhmTjWeOE";
+        // microCMS取得用のJavaScript (更新済み)
+        const serviceDomain = "subconnews"; 
+        const apiKey = "sjRs1MxfHxIzNweDUaGbsQbtZIRc57EkSpYJ";
         const endpoint = "news"; 
 
         async function fetchNews() {
@@ -444,7 +444,7 @@
                 return `
                     <article class="news-item p-4 md:p-6 flex flex-col md:flex-row gap-2 md:gap-8 items-start">
                         <div class="text-slate-400 font-bold font-gothic text-sm whitespace-nowrap pt-1">${formattedDate}</div>
-                        <div class="news-body flex-1">
+                        <div class="news-body flex-1 text-left">
                             <h3 class="font-bold text-navy mb-1 leading-snug">${item.title}</h3>
                             <div class="text-sm text-slate-500 leading-relaxed">${item.content}</div>
                         </div>
