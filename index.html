@@ -16,6 +16,11 @@
         .font-serif {
             font-family: 'Shippori Mincho', serif;
         }
+        /* ゴシック体（Noto Sans JPをゴシックとして使用） */
+        .font-gothic {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 700;
+        }
         .bg-navy {
             background-color: #0f172a;
         }
@@ -38,26 +43,29 @@
             opacity: 1;
             transform: translateY(0);
         }
-        /* ヘッダーの背景微調整 */
+        /* 固定ナビゲーション */
         .nav-glass {
-            background: rgba(15, 23, 42, 0.8);
+            background: rgba(15, 23, 42, 0.9);
             backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
         }
     </style>
 </head>
 <body class="text-slate-800 bg-white">
 
-    <!-- ヘッダー・ロゴエリア (指示された赤丸部分への配置を想定) -->
+    <!-- ヘッダー・ナビゲーション -->
     <nav class="fixed top-0 left-0 w-full z-50 py-4 px-6 md:px-12 flex justify-between items-center transition-all duration-300 nav-glass">
-        <div class="flex items-center">
+        <!-- 左側：ロゴ画像 -->
+        <div class="flex items-center min-w-[150px]">
             <a href="https://houseinfo.jp/" target="_blank" rel="noopener noreferrer" class="block">
-                <!-- 指示されたGIFロゴ -->
-                <img src="houseinfoshiro.gif" alt="ハウスインフォ ロゴ" class="h-10 md:h-14 w-auto object-contain" onerror="this.src='https://via.placeholder.com/200x60/0f172a/ffffff?text=%E3%83%8F%E3%82%A6%E3%82%B9%E3%82%A4%E3%83%B3%E3%83%95%E3%82%A9';">
+                <img src="houseinfoshiro.gif" alt="ハウスインフォ ロゴ" class="h-8 md:h-12 w-auto block object-contain" style="min-width: 120px;">
             </a>
         </div>
-        <div class="hidden md:block">
-            <a href="#contact" class="text-white border border-gold px-6 py-2 text-sm hover:bg-gold transition-colors duration-300">
-                個別相談を予約する
+        
+        <!-- 右側：ゴシック体テキストリンク -->
+        <div class="flex items-center">
+            <a href="https://houseinfo.jp/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gold transition-colors duration-300 font-gothic text-base md:text-lg tracking-wider">
+                ハウスインフォ
             </a>
         </div>
     </nav>
@@ -281,7 +289,7 @@
             </p>
             
             <div class="fade-in space-y-6">
-                <a href="#" class="bg-navy hover:bg-slate-800 text-white px-12 py-6 rounded-sm text-xl font-bold transition-all duration-300 inline-block w-full max-w-md shadow-2xl">
+                <a href="#contact" class="bg-navy hover:bg-slate-800 text-white px-12 py-6 rounded-sm text-xl font-bold transition-all duration-300 inline-block w-full max-w-md shadow-2xl">
                     無料個別相談に申し込む
                 </a>
                 <div class="text-slate-400 text-sm">
