@@ -54,18 +54,18 @@
 <body class="text-slate-800 bg-white">
 
     <!-- ヘッダー・ナビゲーション -->
-    <nav class="fixed top-0 left-0 w-full z-50 py-4 px-6 md:px-12 flex justify-between items-center transition-all duration-300 nav-glass">
-        <!-- 左側：ロゴ画像 -->
-        <div class="flex items-center min-w-[150px]">
-            <a href="https://houseinfo.jp/" target="_blank" rel="noopener noreferrer" class="block">
-                <img src="houseinfoshiro.gif" alt="ハウスインフォ ロゴ" class="h-8 md:h-12 w-auto block object-contain" style="min-width: 120px;">
+    <nav class="fixed top-0 left-0 w-full z-50 py-3 px-4 md:py-4 md:px-12 flex justify-between items-center transition-all duration-300 nav-glass">
+        <!-- 左側：テキストロゴ（ゴシック体） -->
+        <div class="flex items-center">
+            <a href="https://houseinfo.jp/" target="_blank" rel="noopener noreferrer" class="text-white font-gothic text-xl md:text-2xl tracking-tighter hover:text-gold transition-colors duration-300">
+                ハウスインフォ
             </a>
         </div>
         
-        <!-- 右側：ゴシック体テキストリンク -->
+        <!-- 右側：相談リンク（スマホでも表示） -->
         <div class="flex items-center">
-            <a href="https://houseinfo.jp/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gold transition-colors duration-300 font-gothic text-base md:text-lg tracking-wider">
-                ハウスインフォ
+            <a href="#contact" class="bg-gold text-white px-4 py-2 md:px-6 md:py-2 rounded-sm text-xs md:text-sm font-bold hover:bg-opacity-90 transition-all duration-300 shadow-lg">
+                個別相談を予約
             </a>
         </div>
     </nav>
@@ -80,7 +80,7 @@
         
         <div class="relative z-20 container mx-auto px-6 text-center text-white pt-20">
             <div class="mb-8 inline-block border-b border-gold pb-2">
-                <p class="text-sm md:text-base tracking-[0.3em] font-light">ハウスインフォ | 宿泊事業ワンストップサービス</p>
+                <p class="text-sm md:text-base tracking-[0.3em] font-light font-gothic">ハウスインフォ | 宿泊事業ワンストップサービス</p>
             </div>
             <h1 class="text-3xl md:text-6xl font-serif leading-tight mb-8">
                 本業が順調な“今”だからこそ、<br>
@@ -180,21 +180,21 @@
                     <div class="text-gold mb-6 flex justify-center">
                         <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
                     </div>
-                    <h5 class="text-xl font-bold mb-4">高単価 × 1棟貸し</h5>
+                    <h5 class="text-xl font-bold mb-4 font-gothic">高単価 × 1棟貸し</h5>
                     <p class="text-sm text-slate-400">住宅として貸すのではなく、宿泊事業として収益化。限られた土地でも高い収益性を実現します。</p>
                 </div>
                 <div class="fade-in p-8 border border-white/20 bg-white/5 hover:bg-white/10 transition-all duration-300">
                     <div class="text-gold mb-6 flex justify-center">
                         <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                     </div>
-                    <h5 class="text-xl font-bold mb-4">建設のプロの知見</h5>
+                    <h5 class="text-xl font-bold mb-4 font-gothic">建設のプロの知見</h5>
                     <p class="text-sm text-slate-400">「建てる側」の事情がわかるからこそ、建築コストと運営パフォーマンスの最適解を導き出せます。</p>
                 </div>
                 <div class="fade-in p-8 border border-white/20 bg-white/5 hover:bg-white/10 transition-all duration-300">
                     <div class="text-gold mb-6 flex justify-center">
                         <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                     </div>
-                    <h5 class="text-xl font-bold mb-4">実践に裏打ちされた仕組み</h5>
+                    <h5 class="text-xl font-bold mb-4 font-gothic">実践に裏打ちされた仕組み</h5>
                     <p class="text-sm text-slate-400">自社でリスクを取り、運営を続けてきたからこそ提供できる、再現性の高い無人運営システムです。</p>
                 </div>
             </div>
@@ -210,28 +210,28 @@
                 <div class="flex items-center space-x-6 p-6 bg-slate-50 border-l-8 border-gold fade-in">
                     <span class="text-3xl font-serif text-slate-300">01</span>
                     <div>
-                        <h4 class="font-bold text-lg">思考の整理</h4>
+                        <h4 class="font-bold text-lg font-gothic">思考の整理</h4>
                         <p class="text-slate-600">なぜ今やるのか、事業の目的を経営者として明確にします。</p>
                     </div>
                 </div>
                 <div class="flex items-center space-x-6 p-6 bg-slate-50 border-l-8 border-gold fade-in">
                     <span class="text-3xl font-serif text-slate-300">02</span>
                     <div>
-                        <h4 class="font-bold text-lg">条件の言語化</h4>
+                        <h4 class="font-bold text-lg font-gothic">条件の言語化</h4>
                         <p class="text-slate-600">投資規模、エリア、許容できるリスクの範囲を具体的に設定します。</p>
                     </div>
                 </div>
                 <div class="flex items-center space-x-6 p-6 bg-slate-50 border-l-8 border-gold fade-in">
                     <span class="text-3xl font-serif text-slate-300">03</span>
                     <div>
-                        <h4 class="font-bold text-lg text-red-700">物件・立地の選定（最重要）</h4>
+                        <h4 class="font-bold text-lg text-red-700 font-gothic">物件・立地の選定（最重要）</h4>
                         <p class="text-slate-600">「やるべきでない」ケースも正直に提示し、確度の高い案件のみに絞り込みます。</p>
                     </div>
                 </div>
                 <div class="flex items-center space-x-6 p-6 bg-slate-100 border-l-8 border-slate-300 opacity-60 fade-in">
                     <span class="text-3xl font-serif text-slate-300">04-06</span>
                     <div>
-                        <h4 class="font-bold text-lg text-slate-400">事業計画・施工・運営開始</h4>
+                        <h4 class="font-bold text-lg text-slate-400 font-gothic">事業計画・施工・運営開始</h4>
                         <p class="text-slate-500 italic">融資に強い計画策定から、無人運営の仕組み構築まで伴走します。</p>
                     </div>
                 </div>
@@ -242,33 +242,33 @@
     <!-- P10: FAQ -->
     <section class="py-24 bg-slate-50">
         <div class="container mx-auto px-6 max-w-4xl">
-            <h2 class="text-center text-3xl font-serif mb-16 text-navy italic">よくある質問<br><span class="text-sm font-normal text-slate-400 not-italic">― 建設サブコン経営者の皆さまへ ―</span></h2>
+            <h2 class="text-center text-3xl font-serif mb-16 text-navy italic">よくある質問<br><span class="text-sm font-normal text-slate-400 not-italic font-gothic">― 建設サブコン経営者の皆さまへ ―</span></h2>
             
             <div class="space-y-8">
                 <div class="fade-in bg-white p-6 rounded-lg shadow-sm border border-slate-200">
                     <h5 class="flex items-start space-x-3 text-lg font-bold mb-3">
                         <span class="text-gold font-serif">Q1.</span>
-                        <span>宿泊事業は未経験ですが、本当にオーナーとして成立しますか？</span>
+                        <span class="font-gothic text-base">宿泊事業は未経験ですが、本当にオーナーとして成立しますか？</span>
                     </h5>
-                    <p class="pl-10 text-slate-600">
+                    <p class="pl-10 text-slate-600 text-sm md:text-base">
                         はい、成立します。ただし、自己流で始めるのはおすすめしていません。ハウスインフォは、自社で宿泊事業を実践しながら、未経験オーナーでも成立する形に整理したモデルをご提供します。
                     </p>
                 </div>
                 <div class="fade-in bg-white p-6 rounded-lg shadow-sm border border-slate-200">
                     <h5 class="flex items-start space-x-3 text-lg font-bold mb-3">
                         <span class="text-gold font-serif">Q2.</span>
-                        <span>本業が忙しくても運営できますか？</span>
+                        <span class="font-gothic text-base">本業が忙しくても運営できますか？</span>
                     </h5>
-                    <p class="pl-10 text-slate-600">
+                    <p class="pl-10 text-slate-600 text-sm md:text-base">
                         可能です。むしろ、本業が忙しい方を前提に設計しています。ITを活用した無人運営・人を増やさないオペレーションにより、オーナーは事業判断に集中できる体制を整えます。
                     </p>
                 </div>
                 <div class="fade-in bg-white p-6 rounded-lg shadow-sm border border-slate-200">
                     <h5 class="flex items-start space-x-3 text-lg font-bold mb-3">
                         <span class="text-gold font-serif">Q3.</span>
-                        <span>宿泊事業はリスクが高いイメージがあります。</span>
+                        <span class="font-gothic text-base">宿泊事業はリスクが高いイメージがあります。</span>
                     </h5>
-                    <p class="pl-10 text-slate-600">
+                    <p class="pl-10 text-slate-600 text-sm md:text-base">
                         確かに、準備不足のまま始めるとリスクは高くなります。だからこそ、最初の「思考の整理」と「立地選定」に時間をかけます。私たちは「やらない方がいい」と判断すれば、その通り正直にお伝えします。
                     </p>
                 </div>
@@ -289,7 +289,7 @@
             </p>
             
             <div class="fade-in space-y-6">
-                <a href="#contact" class="bg-navy hover:bg-slate-800 text-white px-12 py-6 rounded-sm text-xl font-bold transition-all duration-300 inline-block w-full max-w-md shadow-2xl">
+                <a href="#contact" class="bg-navy hover:bg-slate-800 text-white px-12 py-6 rounded-sm text-xl font-bold transition-all duration-300 inline-block w-full max-w-md shadow-2xl font-gothic">
                     無料個別相談に申し込む
                 </a>
                 <div class="text-slate-400 text-sm">
@@ -302,7 +302,7 @@
     <footer class="py-12 bg-navy text-slate-500 text-center text-sm border-t border-white/5">
         <div class="container mx-auto px-6">
             <div class="mb-4 font-serif text-white tracking-widest uppercase text-lg">ハウスインフォ</div>
-            <p>&copy; 2007-2026 <a href="https://houseinfo.jp/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors duration-300 border-b border-slate-600 hover:border-white">HOUSEINFO</a> Co., Ltd. All Rights Reserved.</p>
+            <p>&copy; 2007-2026 <a href="https://houseinfo.jp/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors duration-300 border-b border-slate-600 hover:border-white font-gothic">HOUSEINFO</a> Co., Ltd. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -323,8 +323,12 @@
             const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
                 nav.classList.add('shadow-lg');
+                nav.style.paddingTop = '0.5rem';
+                nav.style.paddingBottom = '0.5rem';
             } else {
                 nav.classList.remove('shadow-lg');
+                nav.style.paddingTop = '1rem';
+                nav.style.paddingBottom = '1rem';
             }
         });
     </script>
