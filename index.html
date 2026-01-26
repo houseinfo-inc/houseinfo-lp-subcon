@@ -38,12 +38,26 @@
             opacity: 1;
             transform: translateY(0);
         }
+        /* ロゴ配置調整 */
+        .logo-container {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            z-index: 50;
+        }
     </style>
 </head>
 <body class="text-slate-800 bg-white">
 
     <!-- P1: ファーストビュー -->
     <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- ロゴGIF (ご指定のURLへリンク) -->
+        <div class="logo-container">
+            <a href="https://houseinfo.jp/" target="_blank" rel="noopener noreferrer">
+                <img src="houseinfoshiro.gif" alt="ハウスインフォ ロゴ" class="h-8 md:h-12 w-auto object-contain" onerror="this.style.display='none';">
+            </a>
+        </div>
+
         <!-- 背景画像 (images/bessoh01.jpg) -->
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 bg-black/60 z-10"></div>
@@ -52,7 +66,7 @@
         
         <div class="relative z-20 container mx-auto px-6 text-center text-white">
             <div class="mb-8 inline-block border-b border-gold pb-2">
-                <p class="text-sm md:text-base tracking-[0.3em] font-light">HOUSE INFO | 宿泊事業ワンストップサービス</p>
+                <p class="text-sm md:text-base tracking-[0.3em] font-light">ハウスインフォ | 宿泊事業ワンストップサービス</p>
             </div>
             <h1 class="text-3xl md:text-6xl font-serif leading-tight mb-8">
                 本業が順調な“今”だからこそ、<br>
@@ -119,7 +133,7 @@
                 </div>
                 <div class="fade-in space-y-6">
                     <div class="h-64 overflow-hidden rounded-lg">
-                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800" alt="住宅不動産のイメージ" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800" alt="住宅不動産のイメージ" class="w-full h-full object-cover text-slate-400">
                     </div>
                     <h4 class="text-2xl font-serif border-l-4 border-gold pl-4 text-navy">住宅型収益物件の限界</h4>
                     <p class="text-slate-600">
@@ -271,8 +285,8 @@
 
     <footer class="py-12 bg-navy text-slate-500 text-center text-sm border-t border-white/5">
         <div class="container mx-auto px-6">
-            <div class="mb-4 font-serif text-white tracking-widest uppercase">House Info</div>
-            <p>&copy; 2024 House Info Co., Ltd. All Rights Reserved.</p>
+            <div class="mb-4 font-serif text-white tracking-widest uppercase text-lg">ハウスインフォ</div>
+            <p>&copy; 2007-2026 <a href="https://houseinfo.jp/" class="hover:text-white transition-colors duration-300">HOUSEINFO</a> Co., Ltd. All Rights Reserved.</p>
         </div>
     </footer>
 
