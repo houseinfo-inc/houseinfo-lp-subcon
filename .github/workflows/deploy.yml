@@ -19,4 +19,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           # ⚠️ 下記の　lp以降のフォルダ名が送る場所の設定です
-          server-dir: /houseinfo/lp/Subcon/
+          server-dir: /houseinfo/lp/subcon/
