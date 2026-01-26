@@ -16,7 +16,6 @@
         .font-serif {
             font-family: 'Shippori Mincho', serif;
         }
-        /* ゴシック体（Noto Sans JPをゴシックとして使用） */
         .font-gothic {
             font-family: 'Noto Sans JP', sans-serif;
             font-weight: 700;
@@ -45,7 +44,7 @@
         }
         /* 固定ナビゲーション */
         .nav-glass {
-            background: rgba(15, 23, 42, 0.9);
+            background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(8px);
             border-bottom: 1px solid rgba(197, 160, 89, 0.2);
         }
@@ -109,20 +108,44 @@
         .close-modal:hover {
             color: #c5a059;
         }
+
+        /* ページトップボタン */
+        #pageTop {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: #c5a059;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 90;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+        }
+        #pageTop:hover {
+            transform: translateY(-5px);
+            background: #0f172a;
+        }
     </style>
 </head>
 <body class="text-slate-800 bg-white">
 
     <!-- ヘッダー・ナビゲーション -->
     <nav class="fixed top-0 left-0 w-full z-50 py-3 px-4 md:py-4 md:px-12 flex justify-between items-center transition-all duration-300 nav-glass">
-        <!-- 左側：テキストロゴ（ゴシック体） -->
+        <!-- 左側：テキストロゴ（ゴシック体）＋公式サイトタグ -->
         <div class="flex items-center">
-            <a href="https://houseinfo.jp/" target="_blank" rel="noopener noreferrer" class="text-white font-gothic text-xl md:text-2xl tracking-tighter hover:text-gold transition-colors duration-300">
+            <a href="https://houseinfo.jp/" target="_blank" rel="noopener noreferrer" class="text-white font-gothic text-xl md:text-2xl tracking-tighter hover:text-gold transition-colors duration-300 flex items-center gap-2">
                 ハウスインフォ
+                <span class="bg-white/10 text-[10px] md:text-[11px] px-2 py-0.5 rounded text-slate-300 font-normal border border-white/20 whitespace-nowrap">公式サイト</span>
             </a>
         </div>
         
-        <!-- 右側：相談リンク（スマホでも表示） -->
+        <!-- 右側：相談リンク -->
         <div class="flex items-center">
             <a href="https://forms.gle/4YtVc1ZwovsFWRHX7" target="_blank" rel="noopener noreferrer" class="bg-gold text-white px-4 py-2 md:px-6 md:py-2 rounded-sm text-xs md:text-sm font-bold hover:bg-opacity-90 transition-all duration-300 shadow-lg">
                 個別相談を予約
@@ -132,7 +155,6 @@
 
     <!-- P1: ファーストビュー -->
     <header class="relative h-screen flex items-center justify-center overflow-hidden">
-        <!-- 背景画像 (images/bessoh01.jpg) -->
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 bg-black/60 z-10"></div>
             <img src="images/bessoh01.jpg" alt="宿泊施設のイメージ" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&q=80&w=2000';">
@@ -140,9 +162,9 @@
         
         <div class="relative z-20 container mx-auto px-6 text-center text-white pt-20">
             <div class="mb-8 inline-block border-b border-gold pb-2">
-                <p class="text-sm md:text-base tracking-[0.3em] font-light font-gothic">ハウスインフォ | 宿泊事業ワンストップサービス</p>
+                <p class="text-sm md:text-base tracking-[0.3em] font-light font-gothic uppercase">House Info | 宿泊事業ワンストップサービス</p>
             </div>
-            <h1 class="text-3xl md:text-6xl font-serif leading-tight mb-8">
+            <h1 class="text-3xl md:text-6xl font-serif leading-tight mb-8 text-white">
                 本業が順調な“今”だからこそ、<br>
                 次の事業を仕込むという選択。
             </h1>
@@ -150,7 +172,7 @@
                 建設サブコン経営者のための「宿泊事業オーナー」参画モデル
             </p>
             <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="https://forms.gle/4YtVc1ZwovsFWRHX7" target="_blank" rel="noopener noreferrer" class="bg-gold hover:bg-opacity-90 text-white px-10 py-5 rounded-sm text-lg font-bold transition-all duration-300 inline-block">
+                <a href="https://forms.gle/4YtVc1ZwovsFWRHX7" target="_blank" rel="noopener noreferrer" class="bg-gold hover:bg-opacity-90 text-white px-10 py-5 rounded-sm text-lg font-bold transition-all duration-300 inline-block shadow-2xl">
                     無料で資料を請求する
                 </a>
             </div>
@@ -175,7 +197,7 @@
                 </p>
             </div>
             
-            <div class="fade-in bg-white p-8 md:p-12 shadow-xl border-t-4 border-gold">
+            <div class="fade-in bg-white p-8 md:p-12 shadow-xl border-t-4 border-gold text-center">
                 <h3 class="text-xl md:text-3xl font-serif mb-6 text-navy">
                     本業が安定している今こそが、<br>
                     最も合理的なタイミングです。
@@ -191,28 +213,28 @@
 
     <!-- P4 & P5: なぜ建設サブコンなのか -->
     <section class="py-24">
-        <div class="container mx-auto px-6 max-w-6xl">
+        <div class="container mx-auto px-6 max-w-6xl text-center">
             <h2 class="text-center text-3xl md:text-4xl font-serif mb-16 text-navy">
                 建設サブコン経営者は、<br>
                 「不動産収入」の価値を誰よりも知っている。
             </h2>
             
-            <div class="grid md:grid-cols-2 gap-12">
+            <div class="grid md:grid-cols-2 gap-12 text-left">
                 <div class="fade-in space-y-6">
                     <div class="h-64 overflow-hidden rounded-lg shadow-lg">
                         <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800" alt="都市開発" class="w-full h-full object-cover">
                     </div>
                     <h4 class="text-2xl font-serif border-l-4 border-gold pl-4 text-navy">「建てる側」から「持つ側」へ</h4>
-                    <p class="text-slate-600">
+                    <p class="text-slate-600 leading-relaxed">
                         元請企業や不動産オーナーと接する中で、「持つ側」の圧倒的な収益構造を肌で感じてこられたはずです。自社で資産を持ち、継続的な収入を得ることは、業界を知り尽くした経営者にとって最も合理的な道です。
                     </p>
                 </div>
                 <div class="fade-in space-y-6">
                     <div class="h-64 overflow-hidden rounded-lg shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800" alt="住宅ビルディング" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800" alt="住宅ビルディング" class="w-full h-full object-cover text-slate-300">
                     </div>
                     <h4 class="text-2xl font-serif border-l-4 border-gold pl-4 text-navy">住宅型収益物件の限界</h4>
-                    <p class="text-slate-600">
+                    <p class="text-slate-600 leading-relaxed">
                         人口減少、建設物価の高騰、破壊された需給バランス。従来のアパート・マンション経営では、かつてのような利回り確保が困難になっています。「やりたい」と「投資効率」の乖離が広がっています。
                     </p>
                 </div>
@@ -224,7 +246,7 @@
     <section class="py-24 bg-navy text-white overflow-hidden relative">
         <div class="absolute right-0 top-0 w-1/3 h-full bg-white/5 skew-x-12 translate-x-1/2"></div>
         <div class="container mx-auto px-6 relative z-10 text-center">
-            <h2 class="text-3xl md:text-5xl font-serif mb-16 leading-tight">
+            <h2 class="text-3xl md:text-5xl font-serif mb-16 leading-tight text-white">
                 新しい不動産収入の形。<br>
                 それが<span class="text-gold">「1棟貸し宿泊事業」</span>です。
             </h2>
@@ -241,7 +263,7 @@
                     <div class="text-gold mb-6 flex justify-center group-hover:scale-110 transition-transform">
                         <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
                     </div>
-                    <h5 class="text-xl font-bold mb-4 font-gothic">高単価 × 1棟貸し</h5>
+                    <h5 class="text-xl font-bold mb-4 font-gothic text-white">高単価 × 1棟貸し</h5>
                     <p class="text-sm text-slate-400 leading-relaxed mb-4">住宅として貸すのではなく、宿泊事業として収益化。限られた土地でも高い収益性を実現します。</p>
                     <span class="text-gold text-xs font-bold border-b border-gold pb-1 group-hover:text-white group-hover:border-white transition-all">詳細な収益モデルを見る</span>
                 </div>
@@ -251,7 +273,7 @@
                     <div class="text-gold mb-6 flex justify-center group-hover:scale-110 transition-transform">
                         <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                     </div>
-                    <h5 class="text-xl font-bold mb-4 font-gothic">建設のプロの知見</h5>
+                    <h5 class="text-xl font-bold mb-4 font-gothic text-white">建設のプロの知見</h5>
                     <p class="text-sm text-slate-400 leading-relaxed mb-4">「建てる側」の事情がわかるからこそ、建築コストと運営パフォーマンスの最適解を導き出せます。</p>
                     <span class="text-gold text-xs font-bold border-b border-gold pb-1 group-hover:text-white group-hover:border-white transition-all">「建設×運営」の最適化を見る</span>
                 </div>
@@ -261,7 +283,7 @@
                     <div class="text-gold mb-6 flex justify-center group-hover:scale-110 transition-transform">
                         <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                     </div>
-                    <h5 class="text-xl font-bold mb-4 font-gothic">実践に裏打ちされた仕組み</h5>
+                    <h5 class="text-xl font-bold mb-4 font-gothic text-white">実践に裏打ちされた仕組み</h5>
                     <p class="text-sm text-slate-400 leading-relaxed mb-4">自社でリスクを取り、運営を続けてきたからこそ提供できる、再現性の高い無人運営システムです。</p>
                     <span class="text-gold text-xs font-bold border-b border-gold pb-1 group-hover:text-white group-hover:border-white transition-all">「実践者」の運営ノウハウを見る</span>
                 </div>
@@ -269,142 +291,52 @@
         </div>
     </section>
 
-    <!-- モーダル1: 収益モデル -->
-    <div id="modalYield" class="modal" onclick="closeModalOnOutsideClick(event, 'modalYield')">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('modalYield')">&times;</span>
-            <h3 class="text-2xl font-serif text-navy mb-6 border-b border-slate-100 pb-4">高単価 × 1棟貸しの収益モデル</h3>
-            <div class="text-slate-600 leading-loose space-y-4 text-sm md:text-base">
-                <p>
-                    一般的な不動産活用では、住宅として貸し出し、「家賃 × 入居率」によって収益が決まります。
-                    そのため、土地が限られている場合や立地条件が弱い場合、十分な収益を確保することは年々難しくなっています。
-                </p>
-                <p>
-                    一方、1棟貸しの宿泊事業では、建物を「住まわせる」のではなく、<strong>滞在体験そのものを価値として提供</strong>します。
-                    収益は家賃ではなく「宿泊単価 × 稼働率」で設計でき、1泊あたり数万円という価格設定も現実的になります。
-                </p>
-                <p>
-                    また、1棟貸しは大規模な敷地や一等地を前提としません。
-                    住宅地や変形地など、従来は活用しにくかった土地でも、プライベート感や非日常性を打ち出すことで高単価での運営が可能です。
-                </p>
-                <p>
-                    戸数を増やして収益を上げるのではなく、<strong>1棟あたりの価値を高めて収益を生む。</strong>
-                    これが、高単価 × 1棟貸し宿泊事業の本質です。
-                    限られた土地でも成立する、新しい不動産収益の形といえます。
-                </p>
-            </div>
-            <div class="mt-8 text-center">
-                <button class="bg-navy text-white px-8 py-3 rounded-sm font-bold text-sm" onclick="closeModal('modalYield')">閉じる</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- モーダル2: 建設のプロの知見 -->
-    <div id="modalPro" class="modal" onclick="closeModalOnOutsideClick(event, 'modalPro')">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('modalPro')">&times;</span>
-            <h3 class="text-2xl font-serif text-navy mb-6 border-b border-slate-100 pb-4">建設のプロの知見を、事業の武器に変える</h3>
-            <div class="text-slate-600 leading-loose space-y-6 text-sm md:text-base">
-                <p>
-                    建設業を本業とする皆様なら、設計図面を見ただけで「どこにコストがかかり、どこを削れば品質を落とさず予算を抑えられるか」が直感的にわかるはずです。
-                </p>
-                <p>
-                    一般的な宿泊事業のコンサルティングでは、「理想の空間」と「実際の施工費」のギャップが大きく、計画倒れになるケースが少なくありません。しかし、私たちは建設業出身の「実践者」として、そのギャップをあらかじめ排除した事業設計を行います。
-                </p>
-                <div class="bg-slate-50 p-6 rounded-sm border-l-4 border-gold space-y-4">
-                    <p class="font-bold text-navy">具体的には、以下のような最適化を「建てる前」に実施します：</p>
-                    <ul class="list-disc pl-5 space-y-3">
-                        <li><strong>メンテナンス性の最適化：</strong> 数年後の修繕コストを見越し、耐久性と清掃効率に優れた建材をプロの目線で選定します。</li>
-                        <li><strong>運営動線のミリ単位での設計：</strong> 無人運営や省力化を実現するために、リネン交換や清掃スタッフの動きを最小化する空間構成を提案します。</li>
-                        <li><strong>投資対効果（ROI）の最大化：</strong> 過剰な装飾を削ぎ落とし、宿泊客の満足度に直結するポイントにのみコストを集中させる「引き算の設計」を行います。</li>
-                    </ul>
-                </div>
-                <p>
-                    「建てるプロ」である皆様の知見に、私たちの「運営ノウハウ」を掛け合わせることで、ハードとソフトが完璧に噛み合った、高収益な事業基盤を構築することが可能です。
-                </p>
-            </div>
-            <div class="mt-8 text-center">
-                <button class="bg-navy text-white px-8 py-3 rounded-sm font-bold text-sm" onclick="closeModal('modalPro')">閉じる</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- モーダル3: 実践に裏打ちされた仕組み -->
-    <div id="modalSystem" class="modal" onclick="closeModalOnOutsideClick(event, 'modalSystem')">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('modalSystem')">&times;</span>
-            <h3 class="text-2xl font-serif text-navy mb-6 border-b border-slate-100 pb-4">実践に裏打ちされた仕組み：失敗をノウハウに変えた「無人運営」</h3>
-            <div class="text-slate-600 leading-loose space-y-6 text-sm md:text-base">
-                <p>
-                    世の中には多くの「宿泊コンサルタント」が存在しますが、自ら土地を買い、建物を建て、清掃から集客、トラブル対応までを「自社事業」として継続している会社は稀です。
-                </p>
-                <p>
-                    ハウスインフォの最大の特徴は、机上の理論ではなく、<strong>自社の資産を投じてリスクを取り、試行錯誤を繰り返してきた「実践者」である点</strong>にあります。私たちが提供するのは、単なるアドバイスではなく、現場で磨き上げられた「勝てる仕組み」そのものです。
-                </p>
-                <div class="bg-slate-50 p-6 rounded-sm border-l-4 border-gold space-y-4">
-                    <p class="font-bold text-navy text-base">具体的には、以下の3つの柱で貴社の事業を支えます：</p>
-                    <ul class="list-disc pl-5 space-y-4">
-                        <li><strong>「人を増やさない」無人運営システムの確立：</strong> スマートロック、オンラインチェックイン、遠隔監視システムを統合。オーナーが現場に張り付く必要がなく、最小限の工数で安定稼働させる仕組みを提供します。</li>
-                        <li><strong>リスクを最小化する集客戦略：</strong> 特定の予約サイトに依存せず、稼働率と客単価のバランスを最適化する独自のレベニューマネジメントを実践。需要予測に基づいた価格設定のノウハウを共有します。</li>
-                        <li><strong>「やらないこと」の明確化：</strong> 多くの失敗経験から、「コストをかけても効果が薄い設備」や「運営を複雑にするだけの過剰なサービス」を徹底的に排除。シンプルかつ高収益なモデルを再現可能です。</li>
-                    </ul>
-                </div>
-                <p>
-                    私たちが経験してきた「失敗」をショートカットし、最短ルートで成功へ導く。それが、実践者であるハウスインフォが選ばれる理由です。
-                </p>
-            </div>
-            <div class="mt-8 text-center">
-                <button class="bg-navy text-white px-8 py-3 rounded-sm font-bold text-sm" onclick="closeModal('modalSystem')">閉じる</button>
-            </div>
-        </div>
-    </div>
-
     <!-- P9: ステップ -->
     <section class="py-24">
         <div class="container mx-auto px-6 max-w-5xl">
             <h2 class="text-center text-3xl font-serif mb-16 text-navy">着実に進めるための6つのステップ</h2>
             
-            <div class="space-y-4">
+            <div class="grid gap-4 text-left">
                 <div class="flex items-center space-x-6 p-6 bg-slate-50 border-l-8 border-gold fade-in">
                     <span class="text-3xl font-serif text-slate-300">01</span>
                     <div>
                         <h4 class="font-bold text-lg font-gothic">思考の整理</h4>
-                        <p class="text-slate-600">なぜ今やるのか、事業の目的を経営者として明確にします。</p>
+                        <p class="text-slate-600 text-sm md:text-base">なぜ今やるのか、事業の目的を経営者として明確にします。</p>
                     </div>
                 </div>
                 <div class="flex items-center space-x-6 p-6 bg-slate-50 border-l-8 border-gold fade-in">
                     <span class="text-3xl font-serif text-slate-300">02</span>
                     <div>
                         <h4 class="font-bold text-lg font-gothic">条件の言語化</h4>
-                        <p class="text-slate-600">投資規模、エリア、許容できるリスクの範囲を具体的に設定します。</p>
+                        <p class="text-slate-600 text-sm md:text-base">投資規模、エリア、許容できるリスクの範囲を具体的に設定します。</p>
                     </div>
                 </div>
                 <div class="flex items-center space-x-6 p-6 bg-slate-50 border-l-8 border-gold fade-in">
                     <span class="text-3xl font-serif text-slate-300">03</span>
                     <div>
                         <h4 class="font-bold text-lg text-red-700 font-gothic">物件・立地の選定（最重要）</h4>
-                        <p class="text-slate-600">「やるべきでない」ケースも正直に提示し、確度の高い案件のみに絞り込みます。</p>
+                        <p class="text-slate-600 text-sm md:text-base">「やるべきでない」ケースも正直に提示し、確度の高い案件のみに絞り込みます。</p>
                     </div>
                 </div>
                 <div class="flex items-center space-x-6 p-6 bg-slate-50 border-l-8 border-gold fade-in">
                     <span class="text-3xl font-serif text-slate-300">04</span>
                     <div>
                         <h4 class="font-bold text-lg font-gothic text-navy">事業計画の策定</h4>
-                        <p class="text-slate-600">融資にも強い、現実的で精度の高い事業収益シミュレーションを作成します。</p>
+                        <p class="text-slate-600 text-sm md:text-base">融資にも強い、現実的で精度の高い事業収益シミュレーションを作成します。</p>
                     </div>
                 </div>
                 <div class="flex items-center space-x-6 p-6 bg-slate-50 border-l-8 border-gold fade-in">
                     <span class="text-3xl font-serif text-slate-300">05</span>
                     <div>
                         <h4 class="font-bold text-lg font-gothic text-navy">設計・施工・準備</h4>
-                        <p class="text-slate-600">運営効率と顧客満足を両立するハードウェアを、建設のプロの視点で構築します。</p>
+                        <p class="text-slate-600 text-sm md:text-base">運営効率と顧客満足を両立するハードウェアを、建設のプロの視点で構築します。</p>
                     </div>
                 </div>
                 <div class="flex items-center space-x-6 p-6 bg-slate-50 border-l-8 border-gold fade-in">
                     <span class="text-3xl font-serif text-slate-300">06</span>
                     <div>
                         <h4 class="font-bold text-lg font-gothic text-navy">運営開始・伴走</h4>
-                        <p class="text-slate-600">無人運営システムの導入から集客開始、その後の運営改善まで伴走します。</p>
+                        <p class="text-slate-600 text-sm md:text-base">無人運営システムの導入から集客開始、その後の運営改善まで伴走します。</p>
                     </div>
                 </div>
             </div>
@@ -421,36 +353,39 @@
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="work-card fade-in bg-slate-50 overflow-hidden group shadow-md border-b-4 border-gold/20">
+                <!-- 実績1 -->
+                <div class="work-card fade-in bg-slate-50 overflow-hidden group shadow-md border-b-4 border-gold/20 transition-all duration-300">
                     <a href="https://besso.hyogo.jp/" target="_blank" rel="noopener noreferrer" class="block">
                         <div class="h-64 overflow-hidden relative">
                             <img src="images/bessoh01.jpg" alt="Besso姫路" class="w-full h-full object-cover transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&q=80&w=800';">
                         </div>
                         <div class="p-6">
-                            <h4 class="text-xl font-bold font-serif mb-2 text-navy text-left">Besso姫路</h4>
-                            <p class="text-sm text-slate-500 italic text-left">駅徒歩圏の一棟貸し宿</p>
+                            <h4 class="text-xl font-bold font-serif mb-2 text-navy">Besso姫路</h4>
+                            <p class="text-sm text-slate-500 italic">駅徒歩圏の一棟貸し宿</p>
                         </div>
                     </a>
                 </div>
-                <div class="work-card fade-in bg-slate-50 overflow-hidden group shadow-md border-b-4 border-gold/20">
+                <!-- 実績2 -->
+                <div class="work-card fade-in bg-slate-50 overflow-hidden group shadow-md border-b-4 border-gold/20 transition-all duration-300">
                     <a href="https://utakatahimejihotel.jp/" target="_blank" rel="noopener noreferrer" class="block">
                         <div class="h-64 overflow-hidden relative">
                             <img src="images/utakata01.jpg" alt="UTAKATA HOTEL HIMEJI" class="w-full h-full object-cover transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=800';">
                         </div>
                         <div class="p-6">
-                            <h4 class="text-xl font-bold font-serif mb-2 text-navy text-left">UTAKATA HOTEL HIMEJI</h4>
-                            <p class="text-sm text-slate-500 italic text-left">商店街の空きスペースを利用した宿</p>
+                            <h4 class="text-xl font-bold font-serif mb-2 text-navy">UTAKATA HOTEL HIMEJI</h4>
+                            <p class="text-sm text-slate-500 italic">商店街の空きスペースを利用した宿</p>
                         </div>
                     </a>
                 </div>
-                <div class="work-card fade-in bg-slate-50 overflow-hidden group shadow-md border-b-4 border-gold/20">
+                <!-- 実績3 -->
+                <div class="work-card fade-in bg-slate-50 overflow-hidden group shadow-md border-b-4 border-gold/20 transition-all duration-300">
                     <a href="https://wabisabi-himeji.jp/" target="_blank" rel="noopener noreferrer" class="block">
                         <div class="h-64 overflow-hidden relative">
                             <img src="images/wabisabi01.jpg" alt="姫路城下町古民家旅館 侘寂" class="w-full h-full object-cover transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800';">
                         </div>
                         <div class="p-6">
-                            <h4 class="text-xl font-bold font-serif mb-2 text-navy text-left">姫路城下町古民家旅館 侘寂</h4>
-                            <p class="text-sm text-slate-500 italic text-left">古民家を再生利用した宿</p>
+                            <h4 class="text-xl font-bold font-serif mb-2 text-navy">姫路城下町古民家旅館 侘寂</h4>
+                            <p class="text-sm text-slate-500 italic">古民家を再生利用した宿</p>
                         </div>
                     </a>
                 </div>
@@ -459,14 +394,14 @@
     </section>
 
     <!-- お知らせセクション (NEWS) -->
-    <section id="news" class="py-24 bg-slate-50 border-t border-slate-100">
+    <section id="news" class="py-24 bg-slate-50 border-t border-slate-100 text-center">
         <div class="container mx-auto px-6 max-w-4xl">
             <div class="text-center mb-12 fade-in">
                 <span class="text-gold font-bold tracking-widest text-sm mb-2 uppercase font-gothic">News</span>
                 <h2 class="text-3xl font-serif text-navy">お知らせ</h2>
                 <div class="w-8 h-1 bg-gold mx-auto mt-4"></div>
             </div>
-            <div id="news-list" class="fade-in space-y-2 bg-white shadow-sm">
+            <div id="news-list" class="fade-in space-y-2 bg-white shadow-sm text-left">
                 <p class="text-center py-10 text-slate-400">読み込み中...</p>
             </div>
         </div>
@@ -474,11 +409,11 @@
 
     <!-- FAQ -->
     <section class="py-24 bg-white border-t border-slate-100">
-        <div class="container mx-auto px-6 max-w-4xl text-left">
+        <div class="container mx-auto px-6 max-w-4xl text-center">
             <h2 class="text-center text-3xl font-serif mb-16 text-navy italic">よくある質問<br><span class="text-sm font-normal text-slate-400 not-italic font-gothic">― 建設サブコン経営者の皆さまへ ―</span></h2>
             
-            <div class="space-y-8">
-                <div class="fade-in bg-slate-50 p-6 rounded-lg border border-slate-200 text-left">
+            <div class="space-y-8 text-left">
+                <div class="fade-in bg-slate-50 p-6 rounded-lg border border-slate-200">
                     <h5 class="flex items-start space-x-3 text-lg font-bold mb-3">
                         <span class="text-gold font-serif">Q1.</span>
                         <span class="font-gothic text-base">宿泊事業は未経験ですが、本当にオーナーとして成立しますか？</span>
@@ -487,7 +422,7 @@
                         はい、成立します。ただし、自己流で始めるのはおすすめしていません。ハウスインフォは、自社で宿泊事業を実践しながら、未経験オーナーでも成立する形に整理したモデルをご提供します。
                     </p>
                 </div>
-                <div class="fade-in bg-slate-50 p-6 rounded-lg border border-slate-200 text-left">
+                <div class="fade-in bg-slate-50 p-6 rounded-lg border border-slate-200">
                     <h5 class="flex items-start space-x-3 text-lg font-bold mb-3">
                         <span class="text-gold font-serif">Q2.</span>
                         <span class="font-gothic text-base">本業が忙しくても運営できますか？</span>
@@ -496,7 +431,7 @@
                         可能です。むしろ、本業が忙しい方を前提に設計しています。ITを活用した無人運営・人を増やさないオペレーションにより、オーナーは事業判断に集中できる体制を整えます。
                     </p>
                 </div>
-                <div class="fade-in bg-slate-50 p-6 rounded-lg border border-slate-200 text-left">
+                <div class="fade-in bg-slate-50 p-6 rounded-lg border border-slate-200">
                     <h5 class="flex items-start space-x-3 text-lg font-bold mb-3">
                         <span class="text-gold font-serif">Q3.</span>
                         <span class="font-gothic text-base">宿泊事業はリスクが高いイメージがあります。</span>
@@ -510,19 +445,19 @@
     </section>
 
     <!-- CTA -->
-    <section id="contact" class="py-32 text-center bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-5xl font-serif mb-12 leading-tight fade-in text-navy">
+    <section id="contact" class="py-32 text-center bg-white border-t border-slate-100">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-3xl md:text-5xl font-serif mb-12 leading-tight fade-in text-navy text-center">
                 10年後の自社に、<br>
                 どんな選択肢を残しますか？
             </h2>
-            <p class="text-xl text-slate-600 mb-16 fade-in leading-relaxed">
+            <p class="text-xl text-slate-600 mb-16 fade-in leading-relaxed text-center">
                 具体的な案件がなくても構いません。<br>
                 経営者同士として、まずはフラットにお話ししましょう。
             </p>
             
-            <div class="fade-in space-y-6">
-                <a href="https://forms.gle/4YtVc1ZwovsFWRHX7" target="_blank" rel="noopener noreferrer" class="bg-navy hover:bg-slate-800 text-white px-12 py-6 rounded-sm text-xl font-bold transition-all duration-300 inline-block w-full max-w-md shadow-2xl font-gothic text-center">
+            <div class="fade-in space-y-6 text-center">
+                <a href="https://forms.gle/4YtVc1ZwovsFWRHX7" target="_blank" rel="noopener noreferrer" class="bg-navy hover:bg-slate-800 text-white px-12 py-6 rounded-sm text-xl font-bold transition-all duration-300 inline-block w-full max-w-md shadow-2xl font-gothic">
                     無料個別相談に申し込む
                 </a>
                 <div class="text-slate-400 text-sm">
@@ -535,24 +470,115 @@
     <footer class="py-12 bg-navy text-slate-500 text-center text-sm border-t border-white/5">
         <div class="container mx-auto px-6 text-center">
             <div class="mb-4 font-gothic text-white tracking-widest uppercase text-lg">ハウスインフォ</div>
-            <p>&copy; 2007-2026 <a href="https://houseinfo.jp/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors duration-300 border-b border-slate-600 hover:border-white font-gothic">HOUSEINFO</a> Co., Ltd. All Rights Reserved.</p>
+            <p class="text-center">&copy; 2007-2026 <a href="https://houseinfo.jp/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors duration-300 border-b border-slate-600 hover:border-white font-gothic">HOUSEINFO</a> Co., Ltd. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!-- モーダル1: 収益モデル -->
+    <div id="modalYield" class="modal" onclick="closeModalOnOutsideClick(event, 'modalYield')">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modalYield')">&times;</span>
+            <h3 class="text-2xl font-serif text-navy mb-6 border-b border-slate-100 pb-4">高単価 × 1棟貸しの収益モデル</h3>
+            <div class="text-slate-600 leading-loose space-y-6 text-sm md:text-base">
+                <p>
+                    一般的な住宅活用は「家賃 × 入居率」で決まります。しかし、宿泊事業は<strong>「宿泊単価 × 稼働率」</strong>。体験価値を売ることで、1泊数万円の価格設定が現実的になります。
+                </p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse bg-slate-50 text-sm">
+                        <thead>
+                            <tr class="bg-navy text-white">
+                                <th class="p-3 border">指標</th>
+                                <th class="p-3 border">住宅（アパート）</th>
+                                <th class="p-3 border">1棟貸し宿泊</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="p-3 border font-bold">基本単価</td>
+                                <td class="p-3 border">月額（定額）</td>
+                                <td class="p-3 border text-navy font-bold">日額（変動可）</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 border font-bold">収益上限</td>
+                                <td class="p-3 border">家賃相場に依存</td>
+                                <td class="p-3 border text-navy font-bold">体験価値により高騰可</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 border font-bold">立地の重要性</td>
+                                <td class="p-3 border">駅近・周辺利便性</td>
+                                <td class="p-3 border text-navy font-bold">隠れ家的・非日常も価値</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>
+                    戸数を増やして収益を上げるのではなく、<strong>1棟あたりの価値を最大化する。</strong>
+                    これが、限られた土地を「資産」に変える本質です。
+                </p>
+            </div>
+            <div class="mt-8 text-center">
+                <button class="bg-navy text-white px-8 py-3 rounded-sm font-bold text-sm" onclick="closeModal('modalYield')">閉じる</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- モーダル2: 知見 -->
+    <div id="modalPro" class="modal" onclick="closeModalOnOutsideClick(event, 'modalPro')">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modalPro')">&times;</span>
+            <h3 class="text-2xl font-serif text-navy mb-6 border-b border-slate-100 pb-4">建設のプロの知見を、事業の武器に変える</h3>
+            <div class="text-slate-600 leading-loose space-y-6 text-sm md:text-base">
+                <p>建設のプロである皆様なら、設計図から品質とコストのバランスを直感的に見抜けるはずです。私たちは、その感覚を「運営側の収益性」に直結させます。</p>
+                <div class="bg-slate-50 p-6 border-l-4 border-gold space-y-4">
+                    <ul class="list-disc pl-5 space-y-3 text-navy font-medium">
+                        <li><strong>メンテナンスコストの極小化：</strong> 清掃効率と耐久性を両立する建材選定。</li>
+                        <li><strong>運営動線のミリ単位設計：</strong> 無人運営を可能にする、スタッフ負担ゼロの空間構成。</li>
+                        <li><strong>投資対効果の最大化：</strong> 顧客満足に直結しない装飾は削ぎ落とす「引き算」の設計。</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 text-center">
+                <button class="bg-navy text-white px-8 py-3 rounded-sm font-bold text-sm" onclick="closeModal('modalPro')">閉じる</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- モーダル3: システム -->
+    <div id="modalSystem" class="modal" onclick="closeModalOnOutsideClick(event, 'modalSystem')">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modalSystem')">&times;</span>
+            <h3 class="text-2xl font-serif text-navy mb-6 border-b border-slate-100 pb-4">実践に裏打ちされた「無人運営」の完成形</h3>
+            <div class="text-slate-600 leading-loose space-y-6 text-sm md:text-base">
+                <p>私たちは自らリスクを取り、失敗を重ね、それを「仕組み」に変えてきました。提供するのは机上のアドバイスではなく、現場で稼働している実証済みモデルです。</p>
+                <ul class="list-disc pl-5 space-y-4">
+                    <li><strong>人を増やさない仕組み：</strong> スマートロック、遠隔監視を統合し、オーナーの工数を最小化。</li>
+                    <li><strong>レベニューマネジメント：</strong> 予約サイトに依存しない、独自の価格設定ノウハウを共有。</li>
+                    <li><strong>「やらない判断」の基準：</strong> 余剰コストを削り、最短ルートで成功へ導く指針を提示。</li>
+                </ul>
+            </div>
+            <div class="mt-8 text-center">
+                <button class="bg-navy text-white px-8 py-3 rounded-sm font-bold text-sm" onclick="closeModal('modalSystem')">閉じる</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ページトップボタン -->
+    <div id="pageTop" onclick="scrollToTop()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+    </div>
+
     <script>
-        // モーダル操作関数
+        // モーダル操作
         function openModal(id) {
             const modal = document.getElementById(id);
             modal.style.display = "block";
-            document.body.style.overflow = "hidden"; // スクロール防止
+            document.body.style.overflow = "hidden";
         }
-
         function closeModal(id) {
             const modal = document.getElementById(id);
             modal.style.display = "none";
             document.body.style.overflow = "auto";
         }
-
         function closeModalOnOutsideClick(event, id) {
             const modal = document.getElementById(id);
             if (event.target == modal) {
@@ -560,7 +586,7 @@
             }
         }
 
-        // スクロールに応じたフェードインアニメーション
+        // スクロールフェードイン
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -568,71 +594,66 @@
                 }
             });
         }, { threshold: 0.1 });
-
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        // スクロール時のヘッダー演出
+        // スクロール演出
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
+            const pageTop = document.getElementById('pageTop');
             if (window.scrollY > 50) {
                 nav.classList.add('shadow-lg');
                 nav.style.paddingTop = '0.5rem';
                 nav.style.paddingBottom = '0.5rem';
+                pageTop.style.display = "flex";
             } else {
                 nav.classList.remove('shadow-lg');
                 nav.style.paddingTop = '1rem';
                 nav.style.paddingBottom = '1rem';
+                pageTop.style.display = "none";
             }
         });
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
 
-        // microCMS取得用のJavaScript
+        // microCMS News
         const serviceDomain = "subconnews"; 
         const apiKey = "sjRs1MxfHxIzNweDUaGbsQbtZIRc57EkSpYJ";
         const endpoint = "news"; 
-
         async function fetchNews() {
             const listElement = document.getElementById('news-list');
             try {
                 const response = await fetch(`https://${serviceDomain}.microcms.io/api/v1/${endpoint}`, {
                     headers: { "X-MICROCMS-API-KEY": apiKey }
                 });
-
                 if (!response.ok) throw new Error('Network response was not ok');
-
                 const data = await response.json();
                 displayNews(data.contents);
             } catch (error) {
-                console.error('Fetch error:', error);
                 listElement.innerHTML = '<p style="text-align:center; padding: 20px;">お知らせの取得に失敗しました。</p>';
             }
         }
-
         function displayNews(contents) {
             const listElement = document.getElementById('news-list');
-            
             if (!contents || contents.length === 0) {
                 listElement.innerHTML = '<p style="text-align:center; padding: 20px;">現在、新しいお知らせはありません。</p>';
                 return;
             }
-
             const html = contents.map(item => {
                 const date = new Date(item.publishedAt);
                 const formattedDate = `${date.getFullYear()}.${(date.getMonth() + 1).toString().padStart(2, '0')}.${date.getDate().toString().padStart(2, '0')}`;
-                
                 return `
                     <article class="news-item p-4 md:p-6 flex flex-col md:flex-row gap-2 md:gap-8 items-start">
                         <div class="text-slate-400 font-bold font-gothic text-sm whitespace-nowrap pt-1">${formattedDate}</div>
-                        <div class="news-body flex-1 text-left">
+                        <div class="news-body flex-1 text-left text-slate-800">
                             <h3 class="font-bold text-navy mb-1 leading-snug">${item.title}</h3>
                             <div class="text-sm text-slate-500 leading-relaxed">${item.content}</div>
                         </div>
                     </article>
                 `;
             }).join('');
-
             listElement.innerHTML = html;
         }
-
         fetchNews();
     </script>
 </body>
